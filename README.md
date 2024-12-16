@@ -154,7 +154,7 @@ the main branch.
 #### Step 1: Clone the Repository
 First, clone the repository to your local machine:
 
-https://github.com/cheeryNinja/wasb_sql_test.git
+https://github.com/cheeryNinja/wasb_sql_test.git   
 cd wasb_sql_test
 
 #### Step 2: Run the Docker Container with Mounted Volume
@@ -169,14 +169,14 @@ docker run -v "$(pwd)":/mnt/data --name sexi-silverbullet -d trinodb/trino
 #### Step 3: Execute SQL Files to Create Data Structures
 Run the following commands to create the necessary tables and populate data:
 
-docker exec -it sexi-silverbullet trino --file /mnt/data/create_employees.sql
-docker exec -it sexi-silverbullet trino --file /mnt/data/create_expenses.sql
-docker exec -it sexi-silverbullet trino --file /mnt/data/create_invoices.sql
+docker exec -it sexi-silverbullet trino --file /mnt/data/create_employees.sql   
+docker exec -it sexi-silverbullet trino --file /mnt/data/create_expenses.sql   
+docker exec -it sexi-silverbullet trino --file /mnt/data/create_invoices.sql   
 
 #### Step 4: Execute SQL Files to Verify Test Results
 To run verification queries and validate the data:
 
-docker exec -it sexi-silverbullet trino --file /mnt/data/find_manager_cycles.sql
-docker exec -it sexi-silverbullet trino --file /mnt/data/calculate_largest_expensors.sql
-docker exec -it sexi-silverbullet trino --file /mnt/data/generate_supplier_payment_plans.sql
+docker exec -it sexi-silverbullet trino --file /mnt/data/find_manager_cycles.sql   
+docker exec -it sexi-silverbullet trino --file /mnt/data/calculate_largest_expensors.sql  
+docker exec -it sexi-silverbullet trino --file /mnt/data/generate_supplier_payment_plans.sql  
 
